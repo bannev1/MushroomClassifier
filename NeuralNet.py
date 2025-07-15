@@ -11,9 +11,6 @@ class NeuralNet(nn.Module):
 
 		self.pool = nn.MaxPool2d(kernel_size=2, stride=2, padding=0)
 
-		self.fc1 = nn.Linear(64 * 8 * 8, 128)
-		self.fc2 = nn.Linear(128, 64)
-		self.fc3 = nn.Linear(64, 10)
 
 	def forward(self, x):
 		x = self.pool(F.relu(self.conv1(x)))
